@@ -8,6 +8,7 @@ exports.up = function(knex) {
       tbl.string('username').notNullable();
       tbl.string('fullName').notNullable();
       tbl.string('password').notNullable();
+      tbl.string('role').notNullable().defaultTo('General');
     })
     .createTable('category', tbl => {
         tbl.increments();
@@ -15,10 +16,17 @@ exports.up = function(knex) {
     })
     .createTable('posts', tbl => {
         tbl.increments();
+        tbl.string('users_id').unsigned().notNullable().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE');
         tbl.string('title').notNullable();
         tbl.string('category_id').unsigned().notNullable().references('id').inTable('category').onUpdate('CASCADE').onDelete('CASCADE');
         tbl.datetime('date');
         tbl.text('content').notNullable();
+    })
+    .createTable('comments', tbl => {
+      tbl.increments();
+      tbl.string('users_id').unsigned().notNullable().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE');
+      tbl.string('posts_id').unsigned().notNullable().references('id').inTable('posts').onUpdate('CASCADE').onDelete('CASCADE');
+      tbl.string('comment').notNullable();
     })
 };
 

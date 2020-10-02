@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('posts').insert([
-        {title: 'Test post', category_id: '4', content: 'This is the test post'}
+        {title: 'Test post', category_id: '4', content: 'This is the test post', users_id: '1'}
       ]);
     });
 };
