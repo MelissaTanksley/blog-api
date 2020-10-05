@@ -16,7 +16,7 @@ exports.up = function(knex) {
     })
     .createTable('posts', tbl => {
         tbl.increments();
-        tbl.integer('users_id').unsigned().notNullable().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE');
+        tbl.integer('user_id').unsigned().notNullable().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE');
         tbl.string('title').notNullable();
         tbl.integer('category_id').unsigned().notNullable().references('id').inTable('category').onUpdate('CASCADE').onDelete('CASCADE');
         tbl.datetime('date');
@@ -24,7 +24,7 @@ exports.up = function(knex) {
     })
     .createTable('comments', tbl => {
       tbl.increments();
-      tbl.integer('users_id').unsigned().notNullable().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE');
+      tbl.integer('user_id').unsigned().notNullable().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE');
       tbl.integer('posts_id').unsigned().notNullable().references('id').inTable('posts').onUpdate('CASCADE').onDelete('CASCADE');
       tbl.string('comment').notNullable();
     })
