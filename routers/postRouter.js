@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Posts = require('./postModel.js');
 const validate = require('../auth/validate.js');
+const db = require('../database/db-config.js');
 
 router.use('/:id', validate.user);
 
@@ -24,11 +25,11 @@ router.get("/", (req, res, next) => {
 
 // Post Requests
 router.post('/', (req, res) => {
-    Posts.add(post)
-        .then(newPost => {
-            res.status(201).json({post_id: newPost.id, title: newPost.title});
-        })
-        .catch(err => next({code: 500, message: "Error adding new post", err}));
+    const postData = req.body;
+    db('posts')
+        .insert(postData)
+        .then(id => res.status(201).json({data: id}))
+        .catch((err) => console.log(err))
 });
 
 // Put Request
