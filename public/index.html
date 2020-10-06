@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog API</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Web Developers Journey Blog API Documentation</h2>
+      <nav>
+        
+      </nav>
+    </header>
+    <div class="main">
+        <div class="docs-nav">
+          <ul class="nav-icon">
+            <li class="li get">GET</li>
+            <li class="li post">POST</li>
+            <li class="li post">POST</li>
+            <li class="li get">GET</li>
+            <li class="li post">POST</li>
+            <li class="li get">GET</li>
+            <li class="li post">POST</li>
+            <li class="li get">GET</li>
+            <li class="li put">PUT</li>
+            <li class="li del">DEL</li>
+            <li class="li get">GET</li>
+            <li class="li get">GET</li>
+          </ul>
+          <ul class="requests">
+            <li class="li">
+              URL = https://african-marketplace-trackteam.herokuapp.com/
+            </li>
+            <li class="li">
+              <a href="#register">URL/api/auth/register</a>
+            </li>
+            <li class="li">
+              <a href="#login">URL/api/auth/login</a>
+            </li>
+            <li class="li">
+              <a href="#getusers">URL/api/users</a>
+            </li>
+            <li class="li">
+              <a href="#addcategory">URL/api/categorys</a>
+            </li>
+            <li class="li">
+              <a href="#getcategorys">URL/api/categorys</a>
+            </li>
+            <li class="li">
+              <a href="#additem">URL/api/items</a>
+            </li>
+            <li class="li">
+              <a href="#getitems">URL/api/items</a>
+            </li>
+            <li class="li">
+              <a href="#updateitem">URL/api/items/:id</a>
+            </li>
+            <li class="li">
+              <a href="#deleteitem">URL/api/items/:id</a>
+            </li>
+            <li class="li">
+              <a href="#getbyuser">URL/api/by-user/:users_id</a>
+            </li>
+            <li class="li">
+              <a href="#getbycategory">URL/api/by-category/:categorys_id</a>
+            </li>
+          </ul>
+        </div>
+        <div class="docs-body">
+          <div class="docs-item">
+            <h2>Welcome to the Base URL!</h2>
+          </div>
+          <div class="docs-item" id="register">
+            <div class="item-heading">
+              <h3 class="post">POST</h3>
+              <h3>URL/api/auth/register</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Body</h4>
+                <h4>raw</h4>
+              </div>
+              <pre>
+                <code>
+                  {
+                    "username": "testing",
+                    "password": "Lambda",
+                    "email": "testing@email.com",
+                    "name": "John Doe",
+                    "location": "Africa"
+                  }
+                </code>
+              </pre>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "username": "testing",
+                        "password": "Lambda",
+                        "email": "testing@email.com",
+                        "name": "John Doe",
+                        "location": "Africa"
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "user_id": 1,
+                        "username": "testuser",
+                        "token": "long token here"
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="login">
+            <div class="item-heading">
+              <h3 class="post">POST</h3>
+              <h3>URL/api/auth/login</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Body</h4>
+                <h4>raw</h4>
+              </div>
+              <pre>
+                <code>
+                  {
+                    "username": "testuser",
+                    "password": "Lambda"
+                  }
+                </code>
+              </pre>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "username": "testuser",
+                        "password": "Lambda"
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "user_id": 1,
+                        "username": "testuser",
+                        "token": "long token here"
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="getusers">
+            <div class="item-heading">
+              <h3 class="get">GET</h3>
+              <h3>URL/api/users</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (long token here)'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      [
+                        {
+                            "id": 1,
+                            "email": "testuser@email.comm",
+                            "location": "Africa",
+                            "username": "testuser",
+                            "name": "Jane Doe",
+                            "password": "shorter token here"
+                        }
+                      ]
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="addcategory">
+            <div class="item-heading">
+              <h3 class="post">POST</h3>
+              <h3>URL/api/categorys</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="heading">
+                <h4 class="body">Body</h4>
+                <h4>raw</h4>
+              </div>
+              <pre>
+                <code>
+                  {
+                    "category": "Baskets"
+                  }
+                </code>
+              </pre>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (long token here)' \
+                      --data-raw '{
+                                    "category": "Baskets"
+                                  }'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "data": [
+                            1
+                        ]
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="getcategorys">
+            <div class="item-heading">
+              <h3 class="get">GET</h3>
+              <h3>URL/api/categorys</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (token code will show here)'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "data": [
+                            {
+                                "id": 1,
+                                "category": "Baskets"
+                            }
+                        ]
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="additem">
+            <div class="item-heading">
+              <h3 class="post">POST</h3>
+              <h3>URL/api/items</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="heading">
+                <h4 class="body">Body</h4>
+                <h4>raw</h4>
+              </div>
+              <pre>
+                <code>
+                  {
+                    "categorys_id": 1,
+                    "users_id": 1,
+                    "product": "test product",
+                    "description": "product description",
+                    "price": "$2.00"
+                  }
+                </code>
+              </pre>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (long token here)' \
+                      --data-raw '{
+                                    "categorys_id": 1,
+                                    "users_id": 1,
+                                    "product": "test product",
+                                    "description": "product description",
+                                    "price": "$2.00"
+                                  }'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "data": [
+                            1
+                        ]
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="getitems">
+            <div class="item-heading">
+              <h3 class="get">GET</h3>
+              <h3>URL/api/items</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (token code will show here)'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "data": [
+                            {
+                                "id": 1,
+                                "users_id": 1,
+                                "categorys_id": 1,
+                                "product": "Small Woven Basket",
+                                "description": "Hand made",
+                                "price": "$10.00"
+                            }
+                        ]
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="updateitem">
+            <div class="item-heading">
+              <h3 class="put">PUT</h3>
+              <h3>URL/api/items/:id</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="heading">
+                <h4 class="body">Body</h4>
+                <h4>raw</h4>
+              </div>
+              <pre>
+                <code>
+                  {
+                    "users_id": 1,
+                    "categorys_id": 1,
+                    "product": "Updated Test",
+                    "description": "Really good update",
+                    "price": "$10.00"
+                  }
+                </code>
+              </pre>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (long token here)' \
+                      --data-raw '{
+                          "id": 1,
+                                  "users_id": 1,
+                                  "categorys_id": 1,
+                                  "product": "Testing",
+                                  "description": "Testing",
+                                  "price": "$10.00"
+                        }'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "message": "Record numbers changed",
+                        "count": 1
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="deleteitem">
+            <div class="item-heading">
+              <h3 class="del">DEL</h3>
+              <h3>URL/api/items/:id</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (long token here)'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "message": "Number of records deleted",
+                        "count": 1
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="getbyuser">
+            <div class="item-heading">
+              <h3 class="get">GET</h3>
+              <h3>URL/api/by-user/:users_id</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (long token here)'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "data": [
+                            {
+                                "id": 1,
+                                "users_id": 1,
+                                "categorys_id": 1,
+                                "product": "Testing ",
+                                "description": "Testing",
+                                "price": "$10.00"
+                            },
+                            {
+                                "id": 5,
+                                "users_id": 1,
+                                "categorys_id": 1,
+                                "product": "Basket Set",
+                                "description": "1 each of a small, medium, large handmade baskets",
+                                "price": "$25.00"
+                            },
+                            {
+                                "id": 6,
+                                "users_id": 1,
+                                "categorys_id": 1,
+                                "product": "test product",
+                                "description": "product description",
+                                "price": "$2.00"
+                            }
+                        ]
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-item" id="getbycategory">
+            <div class="item-heading">
+              <h3 class="get">GET</h3>
+              <h3>URL/api/by-category/:categorys_id</h3>
+            </div>
+            <div class="item-body">
+              <div class="heading">
+                <h4 class="body">Headers</h4>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                  </tr>
+                  <tr>
+                    <td class="key">Authorization</td>
+                    <td class="value">Bearer (enter really long token here)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p><a href="#top"><img src="arrow.png" /></a></p>
+            <div class="item-example">
+              <div class="request">
+                <div class="header">Example Request</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      --header 'Authorization: Bearer (long token here)'
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="response">
+                <div class="header">Example Response</div>
+                <div class="container">
+                  <pre>
+                    <code>
+                      {
+                        "data": [
+                            {
+                                "id": 4,
+                                "users_id": 2,
+                                "categorys_id": 2,
+                                "product": "Blueberries",
+                                "description": "Basket of Blueberries",
+                                "price": "$2.50"
+                            }
+                        ]
+                      }
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <footer>
+        <p>Created by BeeDev Services</p>
+    </footer>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

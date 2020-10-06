@@ -1,4 +1,4 @@
-// const path =require('path');
+const path =require('path');
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
@@ -15,7 +15,8 @@ const authenticate = require('../auth/authenticate.js');
 
 
 // API
-const server = express();
+// const server = express();
+const app = express();
 
 const sessionConfig = {
   name: 'auth',
@@ -38,28 +39,38 @@ const sessionConfig = {
   )
 };
 
-server.use(helmet());
-server.use(cors());
-server.use(express.json());
+// server.use(helmet());
+// server.use(cors());
+// server.use(express.json());
 
-server.use(session(sessionConfig));
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
 
-server.use('/api/auth', authRouter);
-server.use('/api/users', authenticate, userRouter);
-server.use('/api/posts', postRouter);
+// server.use(session(sessionConfig));
+app.use(session(sessionConfig));
+
+// server.use('/api/auth', authRouter);
+// server.use('/api/users', authenticate, userRouter);
+// server.use('/api/posts', postRouter);
 // server.use('/api', extraRouter);
 
+app.use('./api/auth', authRouter);
+app.use('/api/users', authenticate, userRouter);
+app.use('/api/posts', postRouter);
+// app.use('./api', extraRouter);
 
-// server.use(express.static('public'));
 
-server.use('/', (req, res) => {
+app.use(express.static('public'));
+
+app.use('/', (req, res) => {
     res.send(`
     <h2>API is working<h2/>
     `);
 });
 
-server.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
     res.status(err.code).json(err);
 });
 
-module.exports = server;
+module.exports = app;
