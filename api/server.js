@@ -63,11 +63,11 @@ app.use('/api/posts', postRouter);
 
 app.use(express.static('public'));
 
-app.use('/', (req, res) => {
-    res.send(`
-    <h2>API is working<h2/>
-    `);
-});
+// server.use('/', (req, res) => {
+//     res.send(`
+//     <h2>API is working<h2/>
+//     `);
+// });
 
 app.use((err, req, res, next) => {
     res.status(err.code).json(err);
