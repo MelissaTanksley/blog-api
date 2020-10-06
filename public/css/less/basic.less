@@ -1,0 +1,54 @@
+// Variables
+
+@navbg: #a67e70;
+@mainbg: #d0dcb2;
+@font: #121212;
+@borderbg: #96858f;
+@alt: #ffbe2e;
+@border: 6px groove @borderbg;
+@altborder: 4px groove @alt;
+@get:#249c47;
+@post: #ffb400;
+@put: #097bed;
+@del: #eb2013;
+@1030: ~"only screen and (max-width: 1030px)";
+@850: ~"only screen and (max-width: 850px)";
+@730: ~"only screen and (max-width: 730px)";
+@530: ~"only screen and (max-width: 530px)";
+@400: ~"only screen and (max-width: 400px)";
+
+// Mixins
+
+.flexrow {display: flex;
+    flex-direction: row;
+    align-items: center;}
+.flexcolumn {display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
+.flexspecial {display: flex;
+    flex-direction: row;
+    align-self: flex-start;}
+.flexaltspecial {display: flex;
+    flex-direction: row;
+    align-self: flex-end;}
+.flexcolumnalt {display: flex;
+    flex-direction: column;}
+.rawdata {
+    background-color: #f4f4f4;
+    border: 1px solid #d4d4d4;
+}
+.example {
+    background-color: @font;
+    color: #ffffff;
+}
+.exampledata {
+    background-color: #1a1a1a;
+    color: @alt;
+    margin: 1em;
+    width: 575px;
+}
+
+// Basic Styles
+
+.center {margin: auto;}

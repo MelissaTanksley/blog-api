@@ -1,0 +1,415 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flexspecial {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+}
+.flexaltspecial {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+.flexcolumnalt {
+  display: flex;
+  flex-direction: column;
+}
+.rawdata {
+  background-color: #f4f4f4;
+  border: 1px solid #d4d4d4;
+}
+.example {
+  background-color: #121212;
+  color: #ffffff;
+}
+.exampledata {
+  background-color: #1a1a1a;
+  color: #ffbe2e;
+  margin: 1em;
+  width: 575px;
+}
+.center {
+  margin: auto;
+}
+body {
+  background-color: #d0dcb2;
+  color: #121212;
+}
+body header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #a67e70;
+  justify-content: center;
+  border: 6px groove #96858f;
+}
+body header .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+}
+body header .header h2 {
+  padding: 0.5em 1em;
+  font-size: 2em;
+}
+body header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5em;
+}
+body header nav a {
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 0.5em;
+  margin: 0.5em;
+  border: 6px groove #96858f;
+  background-color: #d0dcb2;
+  color: #121212;
+}
+body .main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: flex-start;
+}
+body .main .docs-nav {
+  width: 20%;
+  min-width: 380px;
+  overflow: auto;
+  float: left;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 4px groove #ffbe2e;
+}
+body .main .docs-nav .nav-icon {
+  padding: 0.5em;
+}
+body .main .docs-nav .nav-icon .li {
+  height: 40px;
+}
+body .main .docs-nav .nav-icon .get {
+  color: #249c47;
+  font-weight: 800;
+}
+body .main .docs-nav .nav-icon .put {
+  color: #097bed;
+  font-weight: 800;
+}
+body .main .docs-nav .nav-icon .post {
+  color: #ffb400;
+  font-weight: 800;
+}
+body .main .docs-nav .nav-icon .del {
+  color: #eb2013;
+  font-weight: 800;
+}
+body .main .docs-nav .requests {
+  padding: 0.5em;
+}
+body .main .docs-nav .requests .li {
+  height: 40px;
+  text-decoration: none;
+}
+body .main .docs-body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 750px;
+  padding: 1em;
+}
+body .main .docs-body .docs-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 735px;
+}
+body .main .docs-body .docs-item h2 {
+  font-size: 2em;
+  padding-bottom: 1em;
+}
+body .main .docs-body .docs-item p {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+body .main .docs-body .docs-item p img {
+  width: 35px;
+  padding: 0.2em;
+}
+body .main .docs-body .docs-item .item-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body .main .docs-body .docs-item .item-heading h3 {
+  font-size: 1.4em;
+}
+body .main .docs-body .docs-item .item-heading .get {
+  color: #249c47;
+  font-weight: 800;
+  padding-right: 1em;
+}
+body .main .docs-body .docs-item .item-heading .post {
+  color: #ffb400;
+  font-weight: 800;
+  padding-right: 1em;
+}
+body .main .docs-body .docs-item .item-heading .put {
+  color: #097bed;
+  font-weight: 800;
+  padding-right: 1em;
+}
+body .main .docs-body .docs-item .item-heading .del {
+  color: #eb2013;
+  font-weight: 800;
+  padding-right: 1em;
+}
+body .main .docs-body .docs-item .item-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+  align-items: flex-start;
+  width: 500px;
+}
+body .main .docs-body .docs-item .item-body .heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 450px;
+  padding: 1em;
+}
+body .main .docs-body .docs-item .item-body .heading .body {
+  font-weight: 600;
+  padding-right: 1em;
+}
+body .main .docs-body .docs-item .item-body pre {
+  background-color: #f4f4f4;
+  border: 1px solid #d4d4d4;
+  padding: 8px 16px;
+  margin: 1em 1em 1em 0;
+  width: 500px;
+}
+body .main .docs-body .docs-item .item-body table {
+  background-color: #f4f4f4;
+  border: 1px solid #d4d4d4;
+  padding: 8px 25px;
+  margin: 1em 1em 1em 0;
+  width: 500px;
+}
+body .main .docs-body .docs-item .item-body table tbody {
+  margin: 0.8em;
+}
+body .main .docs-body .docs-item .item-body table tbody tr {
+  padding: 0.5em;
+}
+body .main .docs-body .docs-item .item-body table tbody tr th {
+  padding: 0.5em;
+  font-weight: 600;
+}
+body .main .docs-body .docs-item .item-body table tbody tr td {
+  padding: 0.5em;
+}
+body .main .docs-body .docs-item .item-body table tbody tr .key {
+  font-weight: 600;
+}
+body .main .docs-body .docs-item .item-example {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0.5em;
+  align-items: flex-start;
+  width: 600px;
+}
+body .main .docs-body .docs-item .item-example .request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .main .docs-body .docs-item .item-example .request .header {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  padding: 0.2em;
+}
+body .main .docs-body .docs-item .item-example .request .container {
+  background-color: #1a1a1a;
+  color: #ffbe2e;
+  margin: 1em;
+  width: 575px;
+}
+body .main .docs-body .docs-item .item-example .response {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .main .docs-body .docs-item .item-example .response .header {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  padding: 0.2em;
+}
+body .main .docs-body .docs-item .item-example .response .container {
+  background-color: #1a1a1a;
+  color: #ffbe2e;
+  margin: 1em;
+  width: 575px;
+}

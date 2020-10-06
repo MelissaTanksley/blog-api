@@ -1,0 +1,42 @@
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flexspecial {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+}
+.flexaltspecial {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+.flexcolumnalt {
+  display: flex;
+  flex-direction: column;
+}
+.rawdata {
+  background-color: #f4f4f4;
+  border: 1px solid #d4d4d4;
+}
+.example {
+  background-color: #121212;
+  color: #ffffff;
+}
+.exampledata {
+  background-color: #1a1a1a;
+  color: #ffbe2e;
+  margin: 1em;
+  width: 575px;
+}
+.center {
+  margin: auto;
+}
