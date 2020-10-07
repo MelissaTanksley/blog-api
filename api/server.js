@@ -55,7 +55,7 @@ app.use(session(sessionConfig));
 // server.use('/api/posts', postRouter);
 // server.use('/api', extraRouter);
 
-app.use('./api/auth', authRouter);
+app.use('/api/auth', authRouter);
 app.use('/api/users', authenticate, userRouter);
 app.use('/api/posts', postRouter);
 // app.use('./api', extraRouter);
