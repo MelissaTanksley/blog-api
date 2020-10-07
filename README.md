@@ -6,6 +6,11 @@ Backend API for A Web Developers Journey Blog Front End
 2. Posts can be added
 3. Login is working with seed users
 
+## Current users
+
+1. General user = username = testuser || password = JustATest
+2. Admin user = username = admin || password = JustATest
+
 ## What is needed?
 Here is what can be worked on
 
