@@ -15,7 +15,7 @@ router.post("/register", validate.register, (req, res, next) => {
     Users.add(user)
         .then(newUser => {
             const token = generateToken(newUser);
-            res.status(201).json({user_id: newUser.id, username: newUser.username, token});
+            res.status(201).json({user_id: newUser.id, username: newUser.username, role: newUser.role, token});
         })
         .catch(err => next({ code: 500, message: "Error creating user", err }));
 });
@@ -24,7 +24,7 @@ router.post("/login", validate.login, (req, res, next) => {
     const user = req.user;
 
     const token = generateToken(user);
-    res.status(200).json({ user_id: user.id, username: user.username, token });
+    res.status(200).json({ user_id: user.id, username: user.username, role: user.role, Welcome: user.fullName, token });
 
 });
 
